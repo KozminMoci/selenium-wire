@@ -174,7 +174,7 @@ class Remote(InspectRequestsMixin, DriverCommonMixin, _Remote):
             seleniumwire_options = {}
 
         self.proxy = backend.create(
-            addr=seleniumwire_options.pop('addr'),
+            addr=seleniumwire_options.get('addr', '127.0.0.1'),
             port=seleniumwire_options.get('port', 0),
             options=seleniumwire_options
         )
